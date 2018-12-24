@@ -1,0 +1,19 @@
+/* You can add global styles to this file, and also import other style files */
+body{
+  padding-top: 70px;
+}
+.pd-r20{
+  padding-right: 20px;
+}
+.mg-r20 {
+  margin-right: 20px;
+}
+.mg-t50 {
+  margin-top: 50px;
+}
+.mg-b50 {
+  margin-bottom: 50px;
+}
+.wt-10{
+  width: 10rem!important;
+}
