@@ -10,6 +10,7 @@ import { SearchComponent } from './search/search.component';
 import { CarouselComponent } from './carousel/carousel.component';
 import { ProductsComponent } from './products/products.component';
 import { StarsComponent } from './stars/stars.component';
+import { ProductService } from './shared/product.service';
 
 
 @NgModule({
@@ -28,7 +29,7 @@ import { StarsComponent } from './stars/stars.component';
     CommonModule,
     AppRoutingModule
   ],
-  providers: [{ provide: LocationStrategy, useClass: HashLocationStrategy }],
+  providers: [ProductService,{ provide: LocationStrategy, useClass: HashLocationStrategy }],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
