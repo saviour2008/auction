@@ -1,19 +1,64 @@
 /* You can add global styles to this file, and also import other style files */
-body{
+body {
   padding-top: 70px;
 }
-.pd-r20{
+
+.ml-20 {
+  margin-left: 20px;
+}
+
+.h-30 {
+  height: 30px;
+  line-height: 30px;
+}
+
+.pd-r20 {
   padding-right: 20px;
 }
+
+.pd-v20 {
+  padding: 20px 0;
+}
+
+.pd-t20 {
+  padding-top: 20px;
+}
+
 .mg-r20 {
   margin-right: 20px;
 }
+
 .mg-t50 {
   margin-top: 50px;
 }
+
+.mg-t20 {
+  margin-top: 20px;
+}
+
 .mg-b50 {
   margin-bottom: 50px;
 }
-.wt-10{
-  width: 10rem!important;
+
+.wt-10 {
+  width: 10rem !important;
+}
+
+.bg-gray {
+  background-color: #eee;
+}
+
+.help-block {
+  color: red;
+  position: absolute;
+  top: 46px;
+  left: 86px;
+}
+
+.pos-r {
+  position: relative;
+}
+
+.has-error input{
+  border: 1px solid red
 }

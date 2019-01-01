@@ -1,4 +1,4 @@
 <p>
-<span *ngFor="let star of stars" class="icon-star" [class.icon-star-empty]="star"></span>
-  <span>{{rating}}星</span>
+  <span *ngFor="let star of stars;let i = index;" class="icon-star" (click)="clickStar(i)" [class.icon-star-empty]="star"></span>
+  <span>{{rating|number:"1.0-2"}}星</span>
 </p>

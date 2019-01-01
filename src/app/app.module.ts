@@ -1,3 +1,4 @@
+import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { CommonModule, LocationStrategy, HashLocationStrategy } from '@angular/common';
@@ -11,7 +12,7 @@ import { CarouselComponent } from './carousel/carousel.component';
 import { ProductsComponent } from './products/products.component';
 import { StarsComponent } from './stars/stars.component';
 import { ProductService } from './shared/product.service';
-
+import { FilterPipe } from './pipe/filter.pipe';
 
 @NgModule({
   declarations: [
@@ -22,12 +23,15 @@ import { ProductService } from './shared/product.service';
     CarouselComponent,
     ProductsComponent,
     StarsComponent,
-    ...Components
+    ...Components,
+    FilterPipe
   ],
   imports: [
     BrowserModule,
     CommonModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FormsModule,
+    ReactiveFormsModule
   ],
   providers: [ProductService,{ provide: LocationStrategy, useClass: HashLocationStrategy }],
   bootstrap: [AppComponent]

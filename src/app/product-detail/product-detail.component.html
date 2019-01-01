@@ -1,6 +1,57 @@
 <div class="row mg-t50">
   <div class="col-md-10 offset-md-1">
-    <img src="http://placehold.it/600x400" alt="">
-    <h4>{{product.title}}</h4>
+    <div class="row">
+      <img class="col-md-4" src="http://placehold.it/600x400" alt="">
+      <div class="col-md-8">
+        <h4>{{product.title}}</h4>
+        <p class="mg-t20">
+          {{product.summary}}
+        </p>
+      </div>
+    </div>
+  </div>
+
+</div>
+<div class="col-md-10 offset-md-1 mg-t20 bg-gray pd-v20">
+  <div class="row h-30">
+    <div class="col-md-4">旅行者评论</div>
+    <div class="col-md-8">
+      <p class="pull-right ml-20">共{{comments.length}}条评论</p>
+      <p class="pull-right">
+        <app-stars [rating]="product.rating"></app-stars>
+      </p>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-4 mg-t20">
+      <button type="button" class="btn btn-primary" (click)="isCommentHidden=!isCommentHidden">发表评论</button>
+    </div>
+  </div>
+  <div class="mg-t20" [hidden]="isCommentHidden">
+    <div class="row">
+      <div class="col-md-4">
+        <app-stars [(rating)]="newRating" [readonly]="false"></app-stars>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-4">
+        <textarea [(ngModel)]="newComment"></textarea>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-4 mg-t20">
+        <button type="button" class="btn btn-success" (click)="addComment()">提交评论</button>
+      </div>
+    </div>
+  </div>
+  <div class="" *ngFor="let comment of comments">
+    <hr>
+    <div class="col-md-12">
+      <app-stars [rating]="comment.rating"></app-stars>
+      <span>{{comment.user}}</span>
+      <span class="pull-right">{{comment.timestamp}}</span>
+      <p></p>
+      <p>{{comment.content}}</p>
+    </div>
   </div>
 </div>
