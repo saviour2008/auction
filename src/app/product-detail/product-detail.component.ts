@@ -21,14 +21,14 @@ export class ProductDetailComponent implements OnInit {
 
   ngOnInit() {
     this.routeInfo.params.subscribe((params: Params) => this.productId = params["productId"]);
-    this.product = this.productService.getProduct(this.productId);
-    this.comments = this.productService.getCommentsForProductId(this.productId);
+    this.productService.getProduct(this.productId).subscribe(res => this.product = res);
+    this.productService.getCommentsForProductId(this.productId).subscribe(res => this.comments = res);
   }
   addComment() {
     let comment = new Comment(0, this.productId, new Date().getTime(), "someone", this.newRating, this.newComment);
     this.comments.unshift(comment);
-    let sum = this.comments.reduce((sum,item)=>sum+ item.rating,0);
-    this.product.rating = sum/this.comments.length;
+    let sum = this.comments.reduce((sum, item) => sum + item.rating, 0);
+    this.product.rating = sum / this.comments.length;
     this.newComment = null;
     this.newRating = 5;
     this.isCommentHidden = true;
